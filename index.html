@@ -155,15 +155,14 @@
             <img src="./img/logo.png" class="img-fluid" />
           </div>
           <div class="col-6 col-sm-3 align-self-center">
-            <a
-              href="#reserving-form"
-              class="btn btn-warning nav-link btn-block"
-              data-toggle="tooltip"
-              data-html="true"
-              title="Or Call us at <br><strong>+852 123456789</strong>"
-              data-placement="bottom"
-              >Reserve Table</a
+            <button
+              type="button"
+              class="btn btn-warning text-white font-weight-bold btn-block"
+              data-toggle="modal"
+              data-target="#reserve-table-modal"
             >
+              Reserve Table
+            </button>
           </div>
         </div>
       </div>
@@ -342,13 +341,17 @@
           </div>
         </div>
       </div>
-      <div class="row row-content align-items-center" id="reserving-form">
-        <div class="col-12 col-sm-8 offset-sm-2">
-          <div class="card">
-            <div class="card-header text-white bg-warning">
-              <h2>Reserve a Table</h2>
+
+      <div id="reserve-table-modal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title">Reserve Table</h2>
+              <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            <div class="card-body">
+            <div class="modal-body">
               <form>
                 <div class="form-group row">
                   <label class="col-12 col-lg-2 col-form-label"
@@ -376,6 +379,30 @@
                   </div>
                 </div>
                 <div class="form-group row">
+                  <label class="col-12 col-lg-2 col-form-label">Section</label>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-success active">
+                      <input
+                        type="radio"
+                        name="options"
+                        id="option1"
+                        autocomplete="off"
+                        checked
+                      />
+                      Non-Smoking
+                    </label>
+                    <label class="btn btn-danger">
+                      <input
+                        type="radio"
+                        name="options"
+                        id="option2"
+                        autocomplete="off"
+                      />
+                      Smoking
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row">
                   <label class="col-12 col-lg-2 col-form-label"
                     >Date and Time</label
                   >
@@ -392,7 +419,10 @@
                 </div>
 
                 <div class="form-group row">
-                  <button type="submit" class="btn btn-primary offset-2">
+                  <button type="submit" class="btn btn-secondary offset-2 mr-1">
+                    Cancel
+                  </button>
+                  <button type="submit" class="btn btn-primary">
                     Reserve
                   </button>
                 </div>
@@ -472,10 +502,5 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-      $(document).ready(() => {
-        $("[data-toggle='tooltip']").tooltip();
-      });
-    </script>
   </body>
 </html>

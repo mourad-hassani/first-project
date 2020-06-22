@@ -74,3 +74,23 @@ body {
   bottom: 0;
   right: 0;
 }
+
+.modal-header {
+  background: $background-dark;
+
+  .modal-title {
+    color: floralwhite;
+  }
+
+  button {
+    color: $background-pale;
+  }
+
+  button:hover {
+    color: floralwhite;
+  }
+}
+
+.modal-body {
+  background: $background-pale;
+}

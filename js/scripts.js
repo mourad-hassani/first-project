@@ -18,7 +18,7 @@ $(document).ready(function () {
   $("#navbar-login").click(function () {
     $("#loginModal").modal("toggle");
   });
-  $("#reserve-table-button").click(() => {
+  $("#reserve-table-button").click(function () {
     $("#reserve-table-modal").modal("toggle");
   });
 });
